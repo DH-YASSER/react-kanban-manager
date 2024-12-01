@@ -1,0 +1,146 @@
+.kanban-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.kanban-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.kanban-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kanban-header p {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.add-task-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-task-form input {
+  flex-grow: 1;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.add-task-form input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.add-task-form button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-task-form button:hover {
+  transform: translateY(-2px);
+}
+
+.board {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 500px;
+  backdrop-filter: blur(10px);
+}
+
+.column h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.count {
+  background: #334155;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  background: #1e293b;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  cursor: grab;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.task-card:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.task-card:hover {
+  border-color: #38bdf8;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.task-card:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+  }
+}
